@@ -8,3 +8,5 @@ class product(models.Model):
     product_name=models.CharField(max_length=50)
     desc=models.CharField(max_length=300)
     pub_date=models.DateField()
+
+    
