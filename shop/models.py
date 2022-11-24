@@ -1,4 +1,6 @@
+from email.policy import default
 from statistics import mode
+from unicodedata import category
 from unittest.util import _MAX_LENGTH
 from django.db import models
 
@@ -6,7 +8,11 @@ from django.db import models
 class product(models.Model):
     product_id=models.AutoField
     product_name=models.CharField(max_length=50)
+    category=models.CharField(max_length=50,default="")
+    subcategory=models.CharField(max_length=50,default="")
+    price=models.IntegerField(default=0)
     desc=models.CharField(max_length=300)
     pub_date=models.DateField()
+    image=models.ImageField(upload_to="shop/images",default="")
 
     
